@@ -1,5 +1,6 @@
 import React from 'react';
 import './HeroSection.css';
+import Link from 'next/link';
 
 const HeroSection = () => {
   return (
@@ -13,8 +14,8 @@ const HeroSection = () => {
           </h1>
        
           <div className="hero-buttons">
-            <button className="hero-btn filled">Get a Free Consultation</button>
-            <button className="hero-btn outlined">Explore Our Services</button>
+            <Link href="/contact"><button className="hero-btn outlined">Get a Free Consultation</button></Link>
+            <Link href="/ServicesPage"><button className="hero-btn outlined">Explore Our Services</button></Link>
           </div>
         </div>
       </div>
