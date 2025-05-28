@@ -1,0 +1,141 @@
+.contact-banner {
+  display: flex;
+  width: 100%;
+  height: 79vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background: url('/assets/contact/banner.jpg') no-repeat center center/cover;
+ }
+.contact-form-container {
+  width: 620px;
+  background-color: #2b63c0;
+  color: white;
+  padding:50px 40px;
+  position: absolute;
+  right: 120px;
+  top: 60%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-container h2 {
+  margin-bottom: 30px;
+ font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    color: #ffffff;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.custom-select-contact {
+  position: relative;
+  flex: 1;
+}
+
+.custom-select-contact select {
+  width: 100%;
+     padding: 10px;
+  appearance: none;
+  background-color: #4d81d1;
+  border: 1px solid #ccc;
+  color: white;
+  font-size: 12px;
+}
+
+.dropdown-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+  flex: 1;
+      padding: 10px;
+ background-color: rgba(255, 255, 255, .2);
+  border: 1px solid rgba(255, 255, 255, .5);
+  color: white;
+  font-size: 12px;
+}
+
+input::placeholder {
+  color: white;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.appointment-button {
+  margin-top: 20px;
+  padding: 10px;
+ background-color: rgba(255, 255, 255, .0);
+  border: 1px solid rgba(255, 255, 255, .5);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 40%;
+}
+
+.appointment-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 768px) {
+  .contact-banner {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px;
+    background-position: center;
+  }
+
+  .contact-form-container {
+    position: static;
+    width: 100%;
+    padding: 30px 20px;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .contact-form-container h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .custom-select select,
+  input[type="text"],
+  input[type="email"],
+  input[type="date"] {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .appointment-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}

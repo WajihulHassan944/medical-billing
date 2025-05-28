@@ -1,0 +1,71 @@
+.medical-features {
+  padding: 60px 10%;
+  margin:25px 0;
+  margin-bottom: 10px;
+  text-align: left;
+  background-color: #fff;
+}
+
+.medical-features .main-title {
+  font-size: 36px;
+  color: #3065b5;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.medical-features .subtitle {
+      font-size: 20px;
+    font-weight: 300;
+    font-style: normal;
+    color: #747474;
+  margin-bottom: 40px;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+}
+
+.feature-card {
+  flex: 1 1 22%;
+  min-width: 220px;
+  text-align: left;
+}
+
+.feature-icon {
+  font-size: 50px;
+  color: #00a6e5;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  color: #111;
+  font-weight: normal;
+  margin: 19px 0;
+}
+
+.feature-card p {
+  color: #787878;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.feature-card-img-home{
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: cover !important;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .feature-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    flex: 1 1 100%;
+    max-width: 400px;
+  }
+}

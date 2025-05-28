@@ -1,0 +1,151 @@
+.info-section {
+  font-family: Arial, sans-serif;
+  padding: 20px 10%;
+  padding-top: 5px;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 30px 0;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-item {
+  flex: 0 0 33.3333%;
+  display: flex;
+ gap:35px;
+  align-items: center;
+  text-align: left;
+  position: relative;
+  padding: 0 20px;
+  padding-left: 40px;
+}
+
+.contact-item .icon {
+  font-size: 26px;
+  color: #00a6e5;
+  margin-bottom: 10px;
+}
+
+.contact-item .label {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.contact-item .value {
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  margin: 8px 0 0;
+}
+
+
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  flex: 1;
+  padding: 40px 30px;
+  color: #fff;
+}
+
+.info-box h3 {
+  font-size: 22px;
+  margin-bottom: 15px;padding: 0 0 20px;
+}
+
+.info-box p {
+  padding: 0 0 20px;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.info-box button {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.box1 {
+  background-color: #3eb8d7;
+}
+
+.box2 {
+  background-color: #0392ce;
+}
+
+.box3 {
+  background-color: #3065b5;
+}
+
+.box3 .hours > div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 0;
+  font-size: 14px;
+}
+@media (max-width: 768px) {
+  .contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .contact-item {
+    flex: 1 1 100%;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding: 0;
+    padding-left: 10px;
+    gap: 20px;
+  }
+
+  .contact-item::before,
+  .contact-item::after {
+    display: none;
+  }
+
+  .contact-item .icon {
+    margin-bottom: 0;
+    font-size: 24px;
+  }
+
+  .contact-item .label,
+  .contact-item .value {
+    margin: 0;
+  }
+
+  .info-grid {
+    flex-direction: column;
+  }
+
+  .info-box {
+    padding: 30px 20px;
+  }
+
+  .info-box h3 {
+    font-size: 20px;
+  }
+
+  .info-box p {
+    font-size: 14px;
+  }
+
+  .info-box button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}

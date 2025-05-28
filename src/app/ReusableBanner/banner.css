@@ -1,0 +1,35 @@
+.banner-container {
+  background: linear-gradient(to right, #0f418a, #1d65c1); 
+  background-image: url('/assets/banner.png');
+  background-size: cover;
+  background-position: center;
+  padding: 35px 20px;
+  padding-top: 175px;
+  color: white;
+}
+
+.banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #c0c0c0;
+  margin-top: 15px;
+}
+
+.breadcrumb-home {
+  color: #a0a0a0;
+}
+
+.breadcrumb-current {
+  color: white;
+  font-weight: 600;
+}
+
+.banner-title {
+  font-size: 26px;
+  font-weight: 500;
+  margin: 0;
+}

@@ -1,0 +1,199 @@
+.appointment-container {
+  display: flex;
+  gap: 70px;
+  padding: 2rem;
+  justify-content: center;
+  font-family: 'Open Sans', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
+  margin: 50px 0;
+}
+
+.form-section {
+  background-color: #2c66b8;
+ padding: 40px 35px 45px 35px;
+  color: white;
+  width: 100%;
+  max-width: 500px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.Heading-title{
+  font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+.row {
+  display: flex;
+
+  gap: 1rem;
+}
+.input1 {
+flex-basis: 50%;
+ padding: 10px 40px 10px 10px;
+  font-size: 12px;
+  font-weight: 100;
+  background-color: rgba(255, 255, 255, .2);
+  border:1px solid rgba(255, 255, 255, .5);
+  color: #fff;
+}
+.input1::placeholder{
+   color: #fff;
+   font-weight: 400;
+   border: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+input[type="date"]{
+  padding-right: 15px;
+  
+}
+.button {
+  padding: 0.75rem;
+ background-color: rgba(255, 255, 255, .0);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+   border:1px solid rgba(255, 255, 255, .3);
+   width: 48%;
+   margin-top: 5px;
+}
+
+.faq-section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.faq-title {
+  color: #2c66b8;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 0.25rem;
+}
+.faq-title-1{
+  font-size: 24px;
+  font-weight: 100;
+}
+.faq-item {
+  background-color: #f7f7f7;
+  padding: 1rem;
+  border: 1px solid #eee;
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+/* Custom Select with React Icons */
+.custom-select-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.custom-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+padding: 10px 40px 10px 10px;
+  font-size: 12px;
+  font-weight: 400;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .2);
+  border:1px solid rgba(255, 255, 255, .5);
+  color: #fff;
+  cursor: pointer;
+}
+
+.select-icon {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: rgba(0,0,0,0.6);
+  font-weight: 100;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  background: #fff;
+}
+
+.custom-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(44, 102, 184, 0.4);
+}
+
+
+
+@media (max-width: 768px) {
+  .appointment-container {
+    flex-direction: column;
+    gap: 40px;
+    padding: 1.5rem 1rem;
+    align-items: center;
+    margin: 30px 0;
+  }
+
+  .form-section,
+  .faq-section {
+    max-width: 100%;
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .Heading-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .input1,
+  .custom-select {
+    padding: 10px 14px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .faq-title,
+  .faq-title-1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .faq-item {
+    font-size: 13px;
+    padding: 0.75rem;
+  }
+
+  .custom-select-wrapper {
+    width: 100%;
+  }
+
+  .select-icon {
+    right: 1rem;
+    width: 18px;
+    height: 18px;
+  }
+}
