@@ -12,10 +12,10 @@ const MainNavbar = ({ scrolled }) => {
 
   return (
     <div className={`main-navbar ${scrolled ? 'scrolled-bg' : ''}`}>
-      <div className="logo">
+      <Link href="/"><div className="logo">
         <span className="icon" style={{background:'transparent'}}><Image src='/assets/logoone.png' width={30} height={30} /></span>
         <span className="brand"><strong>Care</strong>Watch</span>
-      </div>
+      </div></Link>
 
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <FaTimes /> : <FaBars />}
