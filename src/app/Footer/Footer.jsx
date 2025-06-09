@@ -83,11 +83,13 @@ const Footer = () => {
         <div className="footer-column">
           <h3>Services</h3>
           <ul>
-            <li>Outpatient Surgery</li>
-            <li>Cardiac Clinic</li>
-            <li>Ophthalmology Clinic</li>
-            <li>Gynaecological Clinic</li>
-            <li>Outpatient Rehabilitation</li>
+            <li>Medical Billing & Coding Services</li>
+            <li>Physicians Credentialing Services</li>
+            <li>Revenue Cycle Management</li>
+            <li>AR & Denial Management Services</li>
+            <li>Medical Billing & Coding Audit</li>
+            <li>Verification & Prior Authentication</li>
+            <li>Contact Center & Patient Scheduling</li>
           </ul>
         </div>
 

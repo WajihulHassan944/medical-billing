@@ -63,7 +63,9 @@ const FaqColumn = ({ faqs }) => {
             <span className="question-text-contact">{item.question}</span>
             <span className="toggle-icon">{index === activeIndex ? '−' : '+'}</span>
           </div>
-          {index === activeIndex && item.answer && <div className="faq-answer-contact">{item.answer}</div>}
+          {index === activeIndex && item.answer && (
+            <div className="faq-answer-contact">{item.answer}</div>
+          )}
         </div>
       ))}
     </div>
@@ -72,7 +74,7 @@ const FaqColumn = ({ faqs }) => {
 
 const FaqSection = () => {
   return (
-    <div className="faq-wrapper">
+    <div className="faq-wrapper" id="faq"> {/* ← This enables anchor navigation */}
       <div className="faq-header">
         <span className="faq-title-contact">FAQ</span>
         <h2>Have some Questions?</h2>

@@ -13,70 +13,93 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Link from 'next/link';
 
 const serviceCategories = [
-  'End-to-End Billing Solutions',
-  'Claims Accuracy',
-  'Front-End Services',
-  'Coding Compliance',
-  'Reimbursement Recovery',
-  'Practice Optimization',
-  'Legal & Data Security',
-  'Financial Intelligence'
+  {
+    name: 'Medical Billing & Coding Services',
+    slug: 'services',
+  },
+  {
+    name: 'Physicians Credentialing Services',
+    slug: 'service-2',
+  },
+  {
+    name: 'Revenue Cycle Management',
+    slug: 'service-3',
+  },
+  {
+    name: 'AR & Denial Management Services',
+    slug: 'service-4',
+  },
+  {
+    name: 'Medical Billing & Coding Audit',
+    slug: 'service-5',
+  },
+  {
+    name: 'Verification & Prior Authentication',
+    slug: 'service-6',
+  },
+  {
+    name: 'Contact Center & Patient Scheduling',
+    slug: 'service-7',
+  },
 ];
 
-// Updated detailed service cards data
 const serviceData = [
   {
     icon: <LuClipboardList />,
     image: '/assets/doctors/service-1.jpg',
-    title: 'Claims Accuracy',
-    description:
-      'Accurate claim processing and submission to maximize reimbursement and reduce denials across all payers.'
+    title: 'Medical Billing & Coding Services',
+    slug: 'services',
   },
   {
     icon: <LuBadgePercent />,
     image: '/assets/doctors/service-2.jpg',
-    title: 'Front-End Services',
-    description:
-      'Ensure coverage eligibility and benefits verification before services are rendered to avoid payment issues.'
+    title: 'Physicians Credentialing Services',
+    slug: 'service-2',
   },
   {
     icon: <LuDollarSign />,
     image: '/assets/doctors/service-3.jpg',
-    title: 'Financial Intelligence',
-    description:
-      'Streamlined workflows to improve cash flow, reduce AR days, and enhance financial performance.'
+    title: 'Revenue Cycle Management',
+    slug: 'service-3',
   },
   {
     icon: <LuShieldCheck />,
     image: '/assets/doctors/service-4.jpg',
-    title: 'Legal & Data Security',
-    description:
-      'Maintain compliance with HIPAA and payer regulations through thorough audit trails and reporting.'
+    title: 'AR & Denial Management Services',
+    slug: 'service-4',
   },
   {
     icon: <LuFileCheck />,
     image: '/assets/doctors/service-5.jpg',
-    title: 'Reimbursement Recovery',
-    description:
-      'Transparent billing solutions with full-service patient support to improve collections and satisfaction.'
-  }
+    title: 'Medical Billing & Coding Audit',
+    slug: 'service-5',
+  },
+  {
+    icon: <LuFileCheck />,
+    image: '/assets/services/one.jpg',
+    title: 'Verification & Prior Authentication',
+    slug: 'service-6',
+  },
+  {
+    icon: <LuFileCheck />,
+    image: '/assets/home/one.jpg',
+    title: 'Contact Center & Patient Scheduling',
+    slug: 'service-7',
+  },
 ];
 
 const Services = () => {
   const router = useRouter();
   const scrollRef = useRef();
 
-  // Scroll horizontally in service cards container
   const scroll = (direction) => {
     const container = scrollRef.current;
     const amount = 320;
     container.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
   };
 
-  // Navigate to service category page on click
-  const navigateToCategory = (category) => {
-    const encoded = encodeURIComponent(category);
-    router.push(`/services?category=${encoded}`);
+  const navigateToCategory = (slug) => {
+    router.push(`/${slug}`);
   };
 
   return (
@@ -87,12 +110,12 @@ const Services = () => {
           <ul>
             {serviceCategories.map((category) => (
               <li
-                key={category}
-                onClick={() => navigateToCategory(category)}
+                key={category.slug}
+                onClick={() => navigateToCategory(category.slug)}
                 style={{ cursor: 'pointer' }}
-                title={`View details about ${category}`}
+                title={`View details about ${category.name}`}
               >
-                {category}
+                {category.name}
               </li>
             ))}
           </ul>
@@ -123,7 +146,7 @@ const Services = () => {
             <div
               className="service-card"
               key={idx}
-              onClick={() => navigateToCategory(service.title)}
+              onClick={() => navigateToCategory(service.slug)}
               style={{ cursor: 'pointer' }}
               title={`Learn more about ${service.title}`}
             >
@@ -132,7 +155,6 @@ const Services = () => {
                 <div className="overlay-icon">{service.icon}</div>
               </div>
               <h3>{service.title}</h3>
-              <p>{service.description}</p>
             </div>
           ))}
         </div>

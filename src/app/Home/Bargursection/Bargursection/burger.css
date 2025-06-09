@@ -1,0 +1,78 @@
+/* MedicalBillingSection.css */
+
+.medical-billing-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+
+.medical-billing-content {
+  flex: 1 1 500px;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.medical-billing-heading {
+  color: #3065b5;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.medical-billing-paragraph {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.medical-billing-button {
+  background-color: #3065b5;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 100;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.medical-billing-button:hover {
+  background-color: #005fa3;
+}
+
+.medical-billing-image-container {
+  flex: 1 1 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.medical-billing-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .medical-billing-section {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .medical-billing-content,
+  .medical-billing-image-container {
+    max-width: 100%;
+  }
+
+  .medical-billing-button {
+    width: 100%;
+  }
+}

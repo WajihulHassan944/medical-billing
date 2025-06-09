@@ -7,7 +7,9 @@ import {
   FaTwitter,
   FaYoutube,
   FaChevronDown,
+  FaLinkedin,
 } from 'react-icons/fa';
+
 import Link from 'next/link';
 
 const TopHeader = () => {
@@ -57,6 +59,7 @@ const TopHeader = () => {
         <a href="#"><FaInstagram /></a>
         <a href="#"><FaTwitter /></a>
         <a href="#"><FaYoutube /></a>
+         <a href="#"><FaLinkedin /></a>
       </div>
     </div>
   );

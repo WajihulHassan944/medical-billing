@@ -1,0 +1,135 @@
+.appointment-hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.appointment-left-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.appointment-right-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.appointment-heading {
+  font-size: 28px;
+  color: #01557c;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.appointment-subheading {
+  font-size: 20px;
+  color: #003b5b;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.appointment-description {
+  color: #003b5b;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.appointment-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.appointment-features li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #007599;
+  margin-bottom: 12px;
+}
+
+.appointment-icon {
+  color: #00b9d4;
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.appointment-cta-button {
+  background-color: #01a3c7;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.appointment-cta-button:hover {
+  background-color: #c0392b;
+}
+
+.appointment-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .appointment-hero-section {
+    flex-direction: column;
+    padding: 40px 5%;
+    text-align: center;
+  }
+
+  .appointment-left-content,
+  .appointment-right-content {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .appointment-right-content {
+    margin-top: 30px;
+  }
+
+  .appointment-heading {
+    font-size: 24px;
+  }
+
+  .appointment-subheading {
+    font-size: 18px;
+  }
+
+  .appointment-description {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+
+  .appointment-features li {
+    font-size: 15px;
+    justify-content: center;
+  }
+
+  .appointment-icon {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+
+  .appointment-cta-button {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+
+  .appointment-image {
+    max-width: 100%;
+  }
+}

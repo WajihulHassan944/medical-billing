@@ -1,21 +1,44 @@
 'use client';
 import React, { useState } from 'react';
 import './mainnavbar.css';
-import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const MainNavbar = ({ scrolled }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [learnOpen, setLearnOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [companyOpen, setCompanyOpen] = useState(false);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setLearnOpen(false);
+    setSolutionsOpen(false);
+    setCompanyOpen(false);
+  };
+
+  const toggleDropdown = (type, e) => {
+    e.preventDefault();
+    setLearnOpen(false);
+    setSolutionsOpen(false);
+    setCompanyOpen(false);
+
+    if (type === 'learn') setLearnOpen((prev) => !prev);
+    if (type === 'solutions') setSolutionsOpen((prev) => !prev);
+    if (type === 'company') setCompanyOpen((prev) => !prev);
+  };
 
   return (
     <div className={`main-navbar ${scrolled ? 'scrolled-bg' : ''}`}>
-      <Link href="/"><div className="logo">
-        <span className="icon" style={{background:'transparent'}}><Image src='/assets/logoone.png' width={30} height={30} /></span>
-        <span className="brand"><strong>Care</strong>Watch</span>
-      </div></Link>
+      <Link href="/">
+        <div className="logo">
+          <span className="icon">
+            <Image src="/assets/logoone.png" width={30} height={30} alt="Logo" />
+          </span>
+          <span className="brand"><strong>Care</strong>Watch</span>
+        </div>
+      </Link>
 
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <FaTimes /> : <FaBars />}
@@ -23,18 +46,46 @@ const MainNavbar = ({ scrolled }) => {
 
       <div className={`flexed-div ${menuOpen ? 'active' : ''}`}>
         <div className="nav-links">
-          <Link href="/" className='navLinkMain' onClick={closeMenu}>Home</Link>
-          <Link href="/about" className='navLinkMain' onClick={closeMenu}>About</Link>
-          <Link href="/ServicesPage" className='navLinkMain' onClick={closeMenu}>Services</Link>
-          <Link href="/doctors" className='navLinkMain' onClick={closeMenu}>Doctors</Link>
-          <Link href="/" className='navLinkMain' onClick={closeMenu}>Features</Link>
-          <Link href="/#appointment" className="navLinkMain" onClick={closeMenu}>
-  Faqs
-</Link>
-    <Link href="/contact" className="navLinkMain" onClick={closeMenu}>
-  Contact
-</Link>
-          
+          {/* SOLUTIONS */}
+          <div className="dropdown-wrapper">
+            <a href="#" className="navLinkMain" onClick={(e) => toggleDropdown('solutions', e)}>SOLUTIONS</a>
+            {solutionsOpen && (
+              <div className="dropdownMenu">
+                <Link href="/services" className="dropdownItem" onClick={closeMenu}>Medical Billing & Coding Services</Link>
+                <Link href="/service-2" className="dropdownItem" onClick={closeMenu}>Physicians Credentialing Services</Link>
+                <Link href="/service-3" className="dropdownItem" onClick={closeMenu}>Revenue Cycle Management</Link>
+                <Link href="/service-4" className="dropdownItem" onClick={closeMenu}>AR & Denial Management Services</Link>
+                <Link href="/service-5" className="dropdownItem" onClick={closeMenu}>Medical Billing & Coding Audit</Link>
+                <Link href="/service-6" className="dropdownItem" onClick={closeMenu}>Verification & Prior Authentication</Link>
+                <Link href="/service-7" className="dropdownItem" onClick={closeMenu}>Contact Center & Patient Scheduling</Link>
+              </div>
+            )}
+          </div>
+
+          <Link href="/ServicesPage" className="navLinkMain" onClick={closeMenu}>SPECIALTIES</Link>
+
+          {/* COMPANY */}
+          <div className="dropdown-wrapper">
+            <a href="#" className="navLinkMain" onClick={(e) => toggleDropdown('company', e)}>COMPANY</a>
+            {companyOpen && (
+              <div className="dropdownMenu">
+                <Link href="/about" className="dropdownItem" onClick={closeMenu}>About</Link>
+                <Link href="/why-carewatch" className="dropdownItem" onClick={closeMenu}>Why Care Watch</Link>
+              </div>
+            )}
+          </div>
+
+          {/* LEARN */}
+          <div className="dropdown-wrapper">
+            <a href="#" className="navLinkMain" onClick={(e) => toggleDropdown('learn', e)}>LEARN</a>
+            {learnOpen && (
+              <div className="dropdownMenu">
+                <Link href="/contact#faq" className="dropdownItem" onClick={closeMenu}>FAQs</Link>
+
+
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

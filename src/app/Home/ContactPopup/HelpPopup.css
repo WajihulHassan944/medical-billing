@@ -1,0 +1,104 @@
+.help-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.help-popup-overlay .help-popup {
+  background: white;
+  border-radius: 10px;
+  padding: 30px 25px;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.help-popup-overlay .help-popup h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.help-popup-overlay .help-popup p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+.help-popup-overlay .help-form input,
+.help-popup-overlay .help-form select,
+.help-popup-overlay .help-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #f9f9f9;
+}
+
+.help-popup-overlay .help-form input::placeholder,
+.help-popup-overlay .help-form select::placeholder,
+.help-popup-overlay .help-form textarea::placeholder {
+  color: black;
+}
+.help-popup-overlay .help-form .submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007599;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.help-popup-overlay .help-form .submit-btn:hover {
+  background-color: #c0392b;
+}
+.help-popup-overlay .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+.help-popup-overlay input[type="date"] {
+  background-color: white; /* light bg so white icon is visible */
+  color: black;
+}
+
+.help-popup-overlay input[type="date"]:focus + .date-placeholder,
+.help-popup-overlay input[type="date"]:not(:placeholder-shown) + .date-placeholder {
+  display: none;
+}
+.spinner {
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid #333; /* Black or any color */
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

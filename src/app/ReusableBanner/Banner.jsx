@@ -1,6 +1,7 @@
+// /components/Banner.jsx
 import React from 'react';
-import './banner.css';
 import Link from 'next/link';
+import './banner.css';
 
 const Banner = ({ title, breadcrumbs }) => {
   return (
@@ -10,8 +11,8 @@ const Banner = ({ title, breadcrumbs }) => {
         <p className="breadcrumb">
           {breadcrumbs?.map((crumb, index) => (
             <span key={index} className={crumb.active ? 'breadcrumb-current' : 'breadcrumb-home'}>
-              {index === 0 ? (
-                <Link href={crumb.link || '/'}>{crumb.label}</Link> // Make the first breadcrumb a link
+              {crumb.link && !crumb.active ? (
+                <Link href={crumb.link}>{crumb.label}</Link>
               ) : (
                 crumb.label
               )}

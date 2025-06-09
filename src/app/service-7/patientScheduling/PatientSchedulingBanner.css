@@ -1,0 +1,81 @@
+.scheduling-banner {
+display: flex;
+flex-direction: row;
+align-items: center;
+background: #fff;
+border: 2px solid #f05a5c;
+border-radius: 10px;
+padding: 1.5rem;
+background-size: cover;
+background-repeat: no-repeat;
+gap: 1.5rem;
+flex-wrap: wrap;
+justify-content: space-between;
+margin-bottom: 50px;
+}
+
+.scheduling-icon {
+background: linear-gradient(to bottom right, #f05a5c, #f88e8f);
+border-radius: 10px;
+padding: 1rem;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.scheduling-content {
+flex: 1;
+min-width: 250px;
+}
+
+.scheduling-title {
+font-size: 1.25rem;
+font-weight: 600;
+margin-bottom: 0.5rem;
+color: #1a1a1a;
+}
+
+.scheduling-subtitle {
+font-size: 1rem;
+color: #333;
+}
+
+.scheduling-cta {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.scheduling-button {
+background: linear-gradient(to right, #f05a5c, #f88e8f);
+color: #fff;
+font-weight: 600;
+padding: 0.75rem 1.5rem;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+white-space: nowrap;
+transition: all 0.3s ease;
+}
+
+.scheduling-button:hover {
+transform: translateY(-2px);
+opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+.scheduling-banner {
+flex-direction: column;
+align-items: flex-start;
+text-align: left;
+max-width: 300px;
+width: 100%;
+margin: auto;
+}
+
+.scheduling-cta {
+width: 100%;
+justify-content: flex-start;
+margin-top: 1rem;
+}
+}
