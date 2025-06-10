@@ -29,8 +29,8 @@ const ThirdText = () => {
         <Image
           src="/assets/home/7-1.png"
           alt="Billing Performance Dashboard"
-          width={300}
-          height={150}
+          width={450}
+          height={300}
           className="thirdtext-image"
         />
       </div>

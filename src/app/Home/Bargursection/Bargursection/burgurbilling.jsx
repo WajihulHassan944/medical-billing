@@ -1,8 +1,13 @@
+'use client';
 import Image from 'next/image';
+import { useState } from 'react';
 import './burger.css';
-import TeamImage from '../../../../../public/assets/team.png'; // Ensure this image is placed in the public folder
+import TeamImage from '../../../../../public/assets/team.png'; // Optional: You can also place it in /app/assets if preferred
+import HelpPopup from '@/app/Home/ContactPopup/ContactPopup'; // Ensure this path is correct
 
 export default function BurgureBillingSection() {
+  const [showPopup, setShowPopup] = useState(false);
+
   return (
     <section className="medical-billing-section">
       <div className="medical-billing-content">
@@ -17,8 +22,16 @@ export default function BurgureBillingSection() {
           we understand much better how to effectively handle billing challenges regardless of the
           size or specialization of your practice.
         </p>
-        <button className="medical-billing-button">Let&apos;s Connect</button>
+        <button
+          className="medical-billing-button"
+          onClick={() => setShowPopup(true)}
+        >
+          Let&apos;s Connect
+        </button>
       </div>
+
+      {showPopup && <HelpPopup onClose={() => setShowPopup(false)} />}
+
       <div className="medical-billing-image-container">
         <Image
           src={TeamImage}

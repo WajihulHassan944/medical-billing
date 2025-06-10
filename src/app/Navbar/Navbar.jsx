@@ -1,15 +1,19 @@
 'use client';
-import React, { useState } from 'react';
+
+import React, { useState, useRef, useEffect } from 'react';
 import './mainnavbar.css';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
+import { RiArrowDropDownLine } from 'react-icons/ri';
 
 const MainNavbar = ({ scrolled }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [learnOpen, setLearnOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
+
+  const navRef = useRef();
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -20,17 +24,35 @@ const MainNavbar = ({ scrolled }) => {
 
   const toggleDropdown = (type, e) => {
     e.preventDefault();
-    setLearnOpen(false);
-    setSolutionsOpen(false);
-    setCompanyOpen(false);
 
-    if (type === 'learn') setLearnOpen((prev) => !prev);
-    if (type === 'solutions') setSolutionsOpen((prev) => !prev);
-    if (type === 'company') setCompanyOpen((prev) => !prev);
+    if (type === 'learn') {
+      setLearnOpen(prev => !prev);
+      setSolutionsOpen(false);
+      setCompanyOpen(false);
+    } else if (type === 'solutions') {
+      setSolutionsOpen(prev => !prev);
+      setLearnOpen(false);
+      setCompanyOpen(false);
+    } else if (type === 'company') {
+      setCompanyOpen(prev => !prev);
+      setLearnOpen(false);
+      setSolutionsOpen(false);
+    }
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
-    <div className={`main-navbar ${scrolled ? 'scrolled-bg' : ''}`}>
+    <div className={`main-navbar ${scrolled ? 'scrolled-bg' : ''}`} ref={navRef}>
       <Link href="/">
         <div className="logo">
           <span className="icon">
@@ -48,7 +70,9 @@ const MainNavbar = ({ scrolled }) => {
         <div className="nav-links">
           {/* SOLUTIONS */}
           <div className="dropdown-wrapper">
-            <a href="#" className="navLinkMain" onClick={(e) => toggleDropdown('solutions', e)}>SOLUTIONS</a>
+            <a href="#" className="navLinkMain" onClick={(e) => toggleDropdown('solutions', e)}>
+              SOLUTIONS <RiArrowDropDownLine className={`dropdown-arrow ${solutionsOpen ? 'rotated' : ''}`}size={24} />
+            </a>
             {solutionsOpen && (
               <div className="dropdownMenu">
                 <Link href="/services" className="dropdownItem" onClick={closeMenu}>Medical Billing & Coding Services</Link>
@@ -66,10 +90,17 @@ const MainNavbar = ({ scrolled }) => {
 
           {/* COMPANY */}
           <div className="dropdown-wrapper">
-            <a href="#" className="navLinkMain" onClick={(e) => toggleDropdown('company', e)}>COMPANY</a>
+            <a href="#" className="navLinkMain" onClick={(e) => toggleDropdown('company', e)}>
+              COMPANY <RiArrowDropDownLine
+  className={`dropdown-arrow ${companyOpen ? 'rotated' : ''}`}
+  size={24}
+/>
+
+            </a>
             {companyOpen && (
               <div className="dropdownMenu">
                 <Link href="/about" className="dropdownItem" onClick={closeMenu}>About</Link>
+                 <Link href="/doctors" className="dropdownItem" onClick={closeMenu}>Doctors</Link>
                 <Link href="/why-carewatch" className="dropdownItem" onClick={closeMenu}>Why Care Watch</Link>
               </div>
             )}
@@ -77,12 +108,12 @@ const MainNavbar = ({ scrolled }) => {
 
           {/* LEARN */}
           <div className="dropdown-wrapper">
-            <a href="#" className="navLinkMain" onClick={(e) => toggleDropdown('learn', e)}>LEARN</a>
+            <a href="#" className="navLinkMain" onClick={(e) => toggleDropdown('learn', e)}>
+              LEARN <RiArrowDropDownLine className={`dropdown-arrow ${learnOpen ? 'rotated' : ''}`} size={24}/>
+            </a>
             {learnOpen && (
               <div className="dropdownMenu">
                 <Link href="/contact#faq" className="dropdownItem" onClick={closeMenu}>FAQs</Link>
-
-
               </div>
             )}
           </div>

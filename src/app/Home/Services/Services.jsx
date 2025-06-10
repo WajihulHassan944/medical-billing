@@ -1,46 +1,25 @@
 'use client';
 import './Services.css';
-import { useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRef, useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import {
   LuClipboardList,
   LuBadgePercent,
   LuDollarSign,
   LuShieldCheck,
-  LuFileCheck
+  LuFileCheck,
 } from 'react-icons/lu';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Link from 'next/link';
 
 const serviceCategories = [
-  {
-    name: 'Medical Billing & Coding Services',
-    slug: 'services',
-  },
-  {
-    name: 'Physicians Credentialing Services',
-    slug: 'service-2',
-  },
-  {
-    name: 'Revenue Cycle Management',
-    slug: 'service-3',
-  },
-  {
-    name: 'AR & Denial Management Services',
-    slug: 'service-4',
-  },
-  {
-    name: 'Medical Billing & Coding Audit',
-    slug: 'service-5',
-  },
-  {
-    name: 'Verification & Prior Authentication',
-    slug: 'service-6',
-  },
-  {
-    name: 'Contact Center & Patient Scheduling',
-    slug: 'service-7',
-  },
+  { name: 'Medical Billing & Coding Services', slug: 'services' },
+  { name: 'Physicians Credentialing Services', slug: 'service-2' },
+  { name: 'Revenue Cycle Management', slug: 'service-3' },
+  { name: 'AR & Denial Management Services', slug: 'service-4' },
+  { name: 'Medical Billing & Coding Audit', slug: 'service-5' },
+  { name: 'Verification & Prior Authentication', slug: 'service-6' },
+  { name: 'Contact Center & Patient Scheduling', slug: 'service-7' },
 ];
 
 const serviceData = [
@@ -90,6 +69,7 @@ const serviceData = [
 
 const Services = () => {
   const router = useRouter();
+  const pathname = usePathname(); // used to force remount
   const scrollRef = useRef();
 
   const scroll = (direction) => {
@@ -103,7 +83,7 @@ const Services = () => {
   };
 
   return (
-    <section className="services-section">
+    <section className="services-section" key={pathname}>
       <div className="departments-panel">
         <div>
           <h2>Medical Billing</h2>
@@ -119,9 +99,7 @@ const Services = () => {
               </li>
             ))}
           </ul>
-          <Link href="/ServicesPage">
-            View all
-          </Link>
+          <Link href="/ServicesPage">View all</Link>
         </div>
       </div>
 

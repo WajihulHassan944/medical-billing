@@ -6,7 +6,8 @@
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.1);
   position: relative;
-     z-index: 1000;
+  z-index: 1000;
+  font-size: 14px;
 }
 
 .logo {
@@ -18,7 +19,7 @@
 }
 
 .logo .icon {
-  background: white;
+  background: transparent;
   color: #3c6e71;
   border-radius: 50%;
   font-weight: bold;
@@ -54,8 +55,9 @@
   color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 14px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  align-items: center;
+    display: flex;
 }
 
 .nav-links .navLinkMain:hover {
@@ -116,6 +118,24 @@
   cursor: pointer;
 }
 
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+}
+
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+}
+
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+/* Optional: Highlight active headings */
 /* Responsive */
 
 @media (max-width: 768px) {
