@@ -17,12 +17,13 @@ const page = () => {
       <HeroSection />
       <AppointmentEveryPage />
       <InfoSection />
+      <Services />
       <ThirdText />
       <MedicalFeatures />
       <FinancialSuccessSection/>
       <BurgureBillingSection/>
       <div className='line'></div>
-      <Services />
+      
       <Technologies />
       <Testimonials />
 

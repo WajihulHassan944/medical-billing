@@ -1,6 +1,5 @@
 'use client';
 import './Services.css';
-import { useRef, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import {
   LuClipboardList,
@@ -9,18 +8,6 @@ import {
   LuShieldCheck,
   LuFileCheck,
 } from 'react-icons/lu';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import Link from 'next/link';
-
-const serviceCategories = [
-  { name: 'Medical Billing & Coding Services', slug: 'services' },
-  { name: 'Physicians Credentialing Services', slug: 'service-2' },
-  { name: 'Revenue Cycle Management', slug: 'service-3' },
-  { name: 'AR & Denial Management Services', slug: 'service-4' },
-  { name: 'Medical Billing & Coding Audit', slug: 'service-5' },
-  { name: 'Verification & Prior Authentication', slug: 'service-6' },
-  { name: 'Contact Center & Patient Scheduling', slug: 'service-7' },
-];
 
 const serviceData = [
   {
@@ -28,55 +15,55 @@ const serviceData = [
     image: '/assets/doctors/service-1.jpg',
     title: 'Medical Billing & Coding Services',
     slug: 'services',
+    description: 'Streamlined medical billing and accurate coding to maximize reimbursements.',
   },
   {
     icon: <LuBadgePercent />,
     image: '/assets/doctors/service-2.jpg',
     title: 'Physicians Credentialing Services',
     slug: 'service-2',
+    description: 'Fast and reliable credentialing to ensure timely physician onboarding.',
   },
   {
     icon: <LuDollarSign />,
     image: '/assets/doctors/service-3.jpg',
     title: 'Revenue Cycle Management',
     slug: 'service-3',
+    description: 'Optimize revenue flow from appointment to final payment collection.',
   },
   {
     icon: <LuShieldCheck />,
     image: '/assets/doctors/service-4.jpg',
     title: 'AR & Denial Management Services',
     slug: 'service-4',
+    description: 'Reduce account receivables and recover denied claims efficiently.',
   },
   {
     icon: <LuFileCheck />,
     image: '/assets/doctors/service-5.jpg',
     title: 'Medical Billing & Coding Audit',
     slug: 'service-5',
+    description: 'Identify errors and improve compliance through detailed audits.',
   },
   {
     icon: <LuFileCheck />,
     image: '/assets/services/one.jpg',
     title: 'Verification & Prior Authentication',
     slug: 'service-6',
+    description: 'Ensure patient eligibility and authorization before service delivery.',
   },
   {
     icon: <LuFileCheck />,
     image: '/assets/home/one.jpg',
     title: 'Contact Center & Patient Scheduling',
     slug: 'service-7',
+    description: 'Professional patient engagement and appointment scheduling support.',
   },
 ];
 
 const Services = () => {
   const router = useRouter();
-  const pathname = usePathname(); // used to force remount
-  const scrollRef = useRef();
-
-  const scroll = (direction) => {
-    const container = scrollRef.current;
-    const amount = 320;
-    container.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
-  };
+  const pathname = usePathname();
 
   const navigateToCategory = (slug) => {
     router.push(`/${slug}`);
@@ -84,42 +71,15 @@ const Services = () => {
 
   return (
     <section className="services-section" key={pathname}>
-      <div className="departments-panel">
-        <div>
-          <h2>Medical Billing</h2>
-          <ul>
-            {serviceCategories.map((category) => (
-              <li
-                key={category.slug}
-                onClick={() => navigateToCategory(category.slug)}
-                style={{ cursor: 'pointer' }}
-                title={`View details about ${category.name}`}
-              >
-                {category.name}
-              </li>
-            ))}
-          </ul>
-          <Link href="/ServicesPage">View all</Link>
-        </div>
-      </div>
-
       <div className="services-content">
         <div className="services-header">
           <div className="title-group">
             <span className="tag">Trusted by Clinics</span>
             <h2>Our Services</h2>
           </div>
-          <div className="scroll-buttons">
-            <button onClick={() => scroll('left')}>
-              <FaChevronLeft />
-            </button>
-            <button onClick={() => scroll('right')}>
-              <FaChevronRight />
-            </button>
-          </div>
         </div>
 
-        <div className="services-scroll" ref={scrollRef}>
+        <div className="services-grid">
           {serviceData.map((service, idx) => (
             <div
               className="service-card"
@@ -133,6 +93,7 @@ const Services = () => {
                 <div className="overlay-icon">{service.icon}</div>
               </div>
               <h3>{service.title}</h3>
+              <p>{service.description}</p>
             </div>
           ))}
         </div>

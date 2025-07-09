@@ -48,20 +48,10 @@ const InfoSection = () => {
 
         <div className="info-box box3">
           <h3>Business Hours</h3>
-          <div className="hours">
-            <div>
-              <span>Monday – Friday</span>
-              <span>8:00 AM – 6:00 PM</span>
-            </div>
-            <div>
-              <span>Saturday</span>
-              <span>9:00 AM – 3:00 PM</span>
-            </div>
-            <div>
-              <span>Sunday</span>
-              <span>By Appointment</span>
-            </div>
-          </div>
+          <p>
+           CareWatch offers 24/7 support to healthcare providers nationwide, ensuring real-time claim submissions, denial management, and fast-track
+           revenue recovery with zero downtime.
+          </p>
         </div>
       </div>
     </div>

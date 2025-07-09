@@ -50,8 +50,9 @@ margin-top: 35px;
 
 .services-content {
   flex: 1;
-  padding: 0 20px;
+ 
   overflow: hidden;
+  
 }
 
 .services-header {
@@ -217,4 +218,28 @@ margin-top: 35px;
     font-size: 18px;
     padding: 8px;
   }
+}
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.service-card {
+  width: calc(25% - 22.5px);
+  min-width: 240px;
+  max-width: 100%;
+}
+
+@media (max-width: 992px) {
+  .service-card {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .service-card {
+    width: 100%;
+  }
+  
+
 }

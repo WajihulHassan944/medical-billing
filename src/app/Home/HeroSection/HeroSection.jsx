@@ -14,7 +14,7 @@ const HeroSection = () => {
           </h1>
        
           <div className="hero-buttons">
-            <Link href="/contact"><button className="hero-btn outlined">Get a Free Consultation</button></Link>
+            <Link href="/contact"><button className="hero-btn outlined special-hero-btn">Get a Free Consultation</button></Link>
             <Link href="/ServicesPage"><button className="hero-btn outlined">Explore Our Services</button></Link>
           </div>
         </div>
